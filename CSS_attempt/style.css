@@ -2,7 +2,7 @@
     background: red;
 } */
 
-h2 {
+h2:hover {
     color: red
 }
 
