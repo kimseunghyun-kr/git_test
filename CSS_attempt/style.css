@@ -1,0 +1,23 @@
+/* body {
+    background: red;
+} */
+
+h2 {
+    color: red
+}
+
+#subsubtitle {
+    color : greenyellow
+}
+
+.title {
+    color: red
+}
+
+.subtitle {
+    color: skyblue;
+}
+
+#firstpara {
+    color: grey
+}
