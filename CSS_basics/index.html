@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- https://www.youtube.com/watch?v=1Rs2ND1ryYc -->
+<!-- stopped at 52:57. read more if needed -->
+<head>
+    <link rel="stylesheet" type="text/css" href="../CSS_attempt/style.css">
+    <!-- seems like type = "" not always needed, or so it seems -->
+    <title>My Website</title>
+</head>
+
+<body>
+    <h1 class="title"> Lorem Ipsum </h1>
+
+    <h2 class = "subtitle"> the first amendment </h2>
+    <!-- chained class and class -->
+    <h2 class = "subtitle classSubtitle"> the first amendment </h2>
+    <!-- chained class and id -->
+    <h2 class = "subtitle" id = "subsubtitle"> the first amendment </h2>
+     <!-- chained class id and inline style  -->
+    <h2 class = "subtitle" id = "subsubtitle" style = "color: steelblue"> the first amendment </h2> 
+    
+    <!-- h2(type) < class < id < direct assignment of style -->
+    <!--  id is used for single elements that appear on the page for only once (e.g. header, footer, menu) by convention, classes for multiple element -->
+    <!-- so something like an anon class ig -->
+
+
+    <div class="subtitle"> <!-- subtitle -->
+        <div class="classSubtitle"> <!-- classSubtitle -->
+        </div>
+    </div>
+
+
+    <ul>
+        <li>  Lorem ipsum dolor sit amet       </li>
+        <li>  consectetur adipiscing elit      </li>
+        <li>  sed do eiusmod tempor incididunt </li>
+    </ul>
+
+    <ol>
+        <li> ut labore et dolore magna aliqua  </li> 
+    </ol>
+    
+    <h2>Link</h2>
+    <!-- <p>dog</p> -->
+    <a href = "https://www.google.com/" id = "google-link"> to GOOGLE </a>
+
+    
+    <form>
+        <input type="text" placeholder="Full Name" class="form-input">
+        <input type="email" placeholder="Email" class="form-input">
+        <textarea></textarea>
+        <button class="submit-button">Submit</button>	
+    </form>
+
+    <ul>
+		<li class="list-item">Excepteur sint occaecat</li>
+		<ol>
+			<li class="list-item">My numbered list item</li>
+		</ol>
+	</ul>
+
+    <img src = "./img/th.jpg">
+
+    <h2 class = "subtitle article-subtitle"> the second amendment </h2> 
+    <!-- with whitespace, can give multiple classes to the element -->
+
+</body>
+
+</html>

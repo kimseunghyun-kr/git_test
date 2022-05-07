@@ -1,0 +1,162 @@
+/* body {
+    background: red;
+} */
+
+
+/* basic selector */
+/* //for the first example with the h2 */
+
+/* id */
+#subsubtitle { 
+    color : greenyellow
+}
+
+/* class */
+.title {
+    color: red
+}
+
+.subtitle {
+    color: skyblue;
+}
+
+#firstpara {
+    color: grey
+}
+
+/* selecting chained class selectors */
+.subtitle.classSubtitle {
+    color: yellow
+}
+
+/* selecting chained id and class selector */
+#subsubtitle.subtitle {
+    color: red;
+}
+
+/* descendant combinators */
+/* sees if the classSubtitle element is nested within the subtitle */
+/* has a space unlike the chained selectors */
+.subtitle .classSubtitle {
+    color: yellow
+}
+
+
+/* pseudoselector -> element:pseudoselector */
+
+/* hover to change color */
+h2:hover {
+    color: red
+}
+
+/* for the second example with li, pseudoselectors for li-> kind of like a member method  */
+
+/* color ( nth ) child */
+li:nth-child(2) { 
+    color: steelblue
+}
+
+/* color first child of list */
+li:first-child{
+    color:blue
+}
+
+/* color last child of list */
+li:last-child{
+    color:aqua
+}
+
+/* if li got only one child -> ignores the above li:first-child */
+li:only-child { 
+    color: purple
+}
+
+/* pseudoselectors do nothing if such target to invokedoes not exist */
+
+/* pseudoselector for anchor, href */
+
+
+    /* link colour  */
+#google-link:link {
+    color: blue
+}
+
+    /* colour for visited link  */
+#google-link:visited{
+    color: purple
+}
+
+
+
+/* advanced selectors */
+
+/* less specific than pseudoselectors*/
+
+/* + represents follow */
+/* target to invoke -> all anchor tags that immediately follows a h2 tag */
+h2 + a {
+    color: red;
+}
+
+/* target of invocation -> button tags that immediately follow textarea, under a same parent tag */
+textarea~button {
+    color:purple
+}
+
+/* ol inside ul example */
+
+/*child selector*/
+/* target of invocation -> any direct li children of ul ( 1 gen apart ) */
+ul > li {
+    color: blue
+}
+
+/* descendent selector */
+/* target of invocation ( many gen apart ), any li child that can be traced back up to ul */
+ul li {
+    color : green
+}
+
+
+/*attribute selectors*/
+/* ELEM_TAG[attr = value] {} */
+
+h2[class = subtitle] {
+    color: green
+}
+
+/* related to the image */
+/* direct */
+/* img[src = "./img/"] {
+
+} */
+
+/*all that start with the given dir ->  ^=*/
+img[src^="./img/"] {
+    border: 10px solid black;
+
+}
+
+/*all that end with the given dir ->  $=*/
+img[src$="./img/"] {
+    border: 10px solid black;
+
+}
+
+/*all that contains the src anywhere within their dir ->  *= */
+img[src*="./img/"] {
+    border: 10px solid black;
+
+}
+
+/* whitespace attribute selector */
+/* for the second amendment part with 2 classes */
+h2[class ~= article-subtitle] {
+    background-color: green;
+}
+
+/* find every h2 where the class is directly equal to article-subtitle, or article-subtitle with a dash that follows it */
+/* i.e article-subtitle-342423(some id), will select this */
+h2[class |= article-subtitle] {
+    background-color: green;
+}
