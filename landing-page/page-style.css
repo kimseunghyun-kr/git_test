@@ -45,19 +45,130 @@
 
 .headerImage {
     object-fit: cover;
-    max-width: 400px;
-    height: auto;
+    height: 300px;
+    width: 400px;
+    /* object-fit : cover */
+    /* max-width: 400px; */
+    /* height: auto; */
 }
 
-.header-button {
+.sign-up-button {
     background-color: #3882F6;
     color: #F9FAF8;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 7px;
+    border-color:white;
     width: 100px;
     height: 30px;
 }
+
+.second-segment {
+    padding: 10px 0 40px 0;
+    height: 450px;
+}
+
+.second-segment-header {
+    font-size: 36px;
+    color: #1F2937;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-collage {
+    display: flex;
+    flex-direction : row;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.randominfoimg {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+   
+}
+
+.subtext {
+    font-family: Helvetica;
+    font-size: 18px;
+    text-align: center;
+    color: #1F2937;
+}
+
+.collaged {
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    border-color: #3882F6;
+    border-style: solid;
+}
+
+.third-segment {
+    background-color: #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px 0 70px;
+    height: 400px;
+}
+
+.main-quote {
+    padding: 20px 10% 0px 10%;
+    margin: 20px 0 20px 0;
+    color: #1F2937;
+    font-size: 36px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.quote-author {
+    padding: 0px 5% 0px 5%;
+    margin: 5px 0 5px 0;
+    font-weight: bold;
+    text-align: end;
+    font-size: 18px;
+}
+
+.fourth-segment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 350px;
+    background-color: #3882F6;
+    width: 80%;
+    height: 150px;
+    border-radius: 15px;
+    color: #E5E7EB;
+    /* padding: 0px 10% 0px 10%; */
+    margin: 5% 10% 5% 10%;
+}
+
+.sign-up-descript {
+    padding: 0px 10% 0px 10%;
+    margin: 0px 0 0px 0;
+}
+
+.sign-up-column {
+    padding: 0px 10% 0px 10%;
+    margin: 0px 0 0px 0;
+}
+
+.CTA-header {
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.CTA-descript {
+    font-size: 13px;
+}
+
+
+
+
 
 /* what i missed */
 
