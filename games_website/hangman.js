@@ -1,9 +1,18 @@
 //readline shenanigans
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// const readline = require('readline');
+// function getUserAns() {
+//     return new Promise(resolve => {    
+//         const rl = readline.createInterface({
+//             input:  process.stdin,
+//             output: process.stdout
+//         });
+//         rl.question("make a guess", (answer) => {
+//             resolve(answer);
+//             console.log("your answer : ", answer);
+//             rl.close();
+//         });
+//     });   
+// }
 
 function masterWord(inputString) {
 
@@ -32,6 +41,7 @@ function masterWord(inputString) {
 
     while (charMap.size !== 0 || incorrectGuessCount <= 10) {
         console.log(guessChars);
+        let userInput = prompt("guess a character")
 
 
         if (charMap.has(userInput)) {
@@ -54,10 +64,5 @@ function masterWord(inputString) {
 
 // masterWord("Apple")
 
-let userInput = rl.question("guess a character", function (answer) {
-    rl.close();
-});
-
-// console.log(userInput);
 
 
