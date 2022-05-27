@@ -9,27 +9,33 @@
 </head>
 <body>
     <button id = "reset">Reset game</button>
-    <button id = "rock"> Rock !</button> 
-    <button id = "paper"> Paper !</button> 
-    <button id = "scissors"> Scissors !</button> 
+    <button class = "rpsButton" id = "rock"> Rock !</button> 
+    <button class = "rpsButton" id = "paper"> Paper !</button> 
+    <button class = "rpsButton" id = "scissors"> Scissors !</button> 
     
     <div class = "result">
         <div class = "scoreboard">
+            <h3 class = "endWinStatus"></h3> 
+            <h3 class = "currMatch"> Match : 1</h3> 
             <h3 class = "ties"> Ties : 0</h3>
 
             <div class = "computer">
                 <h3> computer </h3>
-                <p> current wins : 0</p>
+                <p class = "computerChoice"></p>
+                <p class = "computerCurrWins"> wins : 0</p>
             </div>
 
             <div class = "user">
-
                 <h3> user </h3>
-                <p>current wins : 0</p> 
+                <p class = "playerChoice"></p>
+                <p class = "playerCurrWins"> wins : 0</p> 
             </div>
         </div>
-       
 
+    </div>
+
+    <div class = "tracker">
+        <!-- to give the tracking records -->
     </div>
 </body>
 </html>

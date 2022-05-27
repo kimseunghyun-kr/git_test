@@ -1,6 +1,6 @@
 let computerWinCount = 0;
 let playerWinCount = 0;
-let MatchCount = 1;
+let MatchCount = 0;
 let totalDrawCount = 0;
 
 //RPS functionality
@@ -33,8 +33,10 @@ function RPStoNUM(string) {
 
 function RPS(pChoice) {
     let computer = computerPlay();
-    console.log(NUMtoRPS(computer));
+    // console.log(NUMtoRPS(computer));
+    document.querySelector(".computerChoice").textContent = NUMtoRPS(computer);
     let player = RPStoNUM(pChoice);
+    document.querySelector(".playerChoice").textContent = pChoice;
     // console.log(player);
 
     if (computer == player) {
@@ -53,7 +55,7 @@ function RPS(pChoice) {
 
     //initialise
 function startGame() {
-    let buttons = document.querySelectorAll("button");
+    let buttons = document.querySelectorAll(".rpsButton");
     buttons.forEach((button) =>
         button.addEventListener("click", () => {
             if (button.id) {
@@ -70,35 +72,53 @@ function reset() {
 
     computerWinCount = 0;
     playerWinCount = 0;
-    MatchCount = 1;
+    MatchCount = 0;
     totalDrawCount = 0;
+
+    document.querySelector(".ties").textContent = "Ties : 0"
+    document.querySelector(".playerChoice").textContent = ""
+    document.querySelector(".computerChoice").textContent = ""
+    document.querySelector(".playerCurrWins").textContent = "wins : 0"
+    document.querySelector(".computerCurrWins").textContent = "wins : 0"
+    document.querySelector(".currMatch").textContent = "Match : 1"
+    document.querySelector(".endWinStatus").textContent = ""
+
 
 }
 
+
+//TODO
 function update(RPSresult) {
     //during match
-    if (MatchCount < 6) {
+    if (MatchCount < 5) {
         MatchCount++;
+        document.querySelector(".currMatch").textContent = "Match : " + MatchCount;
         if (RPSresult == "draw") {
             totalDrawCount++;
+            document.querySelector(".ties").textContent = "Ties : " + totalDrawCount;
         } else {
             if (RPSresult == "win") {
                 playerWinCount++;
+                document.querySelector(".playerCurrWins").textContent = "wins : " + playerWinCount;
             } else {
                 computerWinCount++;
+                document.querySelector(".computerCurrWins").textContent = "wins : " + computerWinCount;
             }
         }
 
     } else {
         //at the end
         if (playerWinCount > computerWinCount) {
-            return "win";
+            document.querySelector(".endWinStatus").textContent = "player won"
+            // return "win";
         } else {
-            return "lose";
+            // return "lose";
+            document.querySelector(".endWinStatus").textContent = "computer won"
         }
     }
 }
-
+let resetGame = document.querySelector('#reset');
+resetGame.addEventListener("click", () => {reset()});
 startGame();
 
 //Legacy
