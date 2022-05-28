@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>etch-a-sketch</title>
+        <script src = "etch-a-sketch.js" defer></script>
+        <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    <h3> etch-a-sketch</h3>
+
+    <div class = board></div>
+
+    <div class = "size-input">
+        <input type = "text" placeholder = " Board - size" value = "16" onchange = "changeBoardSize(this.value)"/>
+    </div>
+
+    <div class ="edit-tools">
+    <button class = "black" onclick = 'changeColour("black")' >black</button>
+    <button class = "red" onclick = 'changeColour("red")'> red</button>
+    <button class = "blue" onclick = 'changeColour("blue")'>blue</button>
+    <button class = "yellow" onclick = 'changeColour("yellow")'> yellow </button>
+    <button class = "eraser" onclick = 'changeColour("white")'> eraser </button>
+    <button class = "random" onclick = 'changeColour("random")'> random </button>
+    <button class = "rainbow" onclick = 'changeColour("rainbow")'> Chase The Rainbow </button>
+    </div>
+    
+</body>
+</html>
