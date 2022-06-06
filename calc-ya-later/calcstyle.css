@@ -1,0 +1,41 @@
+.buttons {
+    display: grid;
+    height : 55vh;
+    aspect-ratio: 1;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2px;
+}
+
+.display {
+ 
+    background-color: #b2b9b7;
+    height: 10vh;
+    width : 54vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 3.5em;
+
+  
+}
+
+.numDisplay {
+    max-width: 36vh;
+    overflow: hidden;
+}
+
+.calcContainer {
+    display: flex;
+    min-height: 95vh;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 500px;
+    overflow: hidden;
+    background-color: azure;
+    flex-direction: column;
+}
+
