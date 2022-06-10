@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- get vs post -->
+
+    <!-- We use GET when we want to retrieve something from 
+        a server. For example, Google uses a GET request 
+        when you search as it gets the search results.
+
+        POST is used when we want to change something on 
+        the server, for example, when a user makes an account 
+        or makes a payment on a website. -->
+
+    <form action="example.com/path" method="post">
+        <!-- input element accepts a type attribute 
+                which tells the browser what type of data it 
+                should expect -->
+        <label for="Fname">First Name</label>
+        <input type="text" name="" id="Fname" placeholder="amiya" name="Fname">
+
+        <!--  input do not tell what kind of data users
+                     are supposed to provide. -->
+
+        <!-- label does -->
+
+
+        <!-- label links up with input elemenet by for(label) and id(input) -->
+        <!-- these need to be the same for label to work with input -->
+
+        <!-- placeholder -> in the input, literally means as it is -->
+
+        <!-- IMPT -->
+        <!-- name -> attribute for the backend to know -->
+        <!-- entry is ignored if name is submitted -->
+
+        <!-- ^^ above is due to httprequest shenanigans -->
+
+
+        <!-- email inputs -->
+        <!-- use an input element with type attribute of “email”: -->
+        <label for="user_email">Email Address:</label>
+        <input type="email" id="user_email" name="email" placeholder="you@example.com">
+
+        <!-- passwords -->
+        <!-- use an input element with type attribute of "password": -->
+        <label for="user_password">Password:</label>
+        <input type="password" id="user_password" name="password">
+
+        <!-- numbers -->
+        <!-- use an input element with type attribute of number: -->
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount">
+
+
+        <!-- date -->
+        <!-- use an input element with type attribute of date: -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+
+    </form>
+
+
+    <!-- textarea -->
+    <!--  input box that can accept text that spans multiple 
+            lines like user comments and reviews -->
+    <textarea name="reviews" id="" cols="30" rows="10">reviews</textarea>
+
+    <!-- Select Dropdown -->
+
+    <!--  create a select dropdown, we use the <select> element.
+             Any options we want to display within the select element
+              are defined using <option> elements: -->
+
+    <!-- All the option elements need to have a value attribute. 
+        This value will be sent to the server when the form is submitted. -->
+    <select name="Car">
+        <option value="mercedes">Mercedes</option>
+        <option value="tesla">Tesla</option>
+        <option value="volvo">Volvo</option>
+        <option value="bmw">BMW</option>
+        <option value="mini">Mini</option>
+        <option value="ford">Ford</option>
+    </select>
+
+    <!-- default selected element -->
+    <!-- add attribute selected -->
+    <select name="Car">
+        <option value="mercedes">Mercedes</option>
+        <option value="tesla">Tesla</option>
+        <option value="volvo" selected>Volvo</option>
+        <!--here-->
+        <option value="bmw">BMW</option>
+        <option value="mini">Mini</option>
+        <option value="ford">Ford</option>
+    </select>
+
+    <!-- split list of options into groups -->
+    <!-- OPTGROUP ELEMENT -->
+    <!--  optgroup element takes a label attribute
+         which the browser uses as the label for each group: -->
+
+    <select name="fashion">
+        <optgroup label="Clothing">
+            <option value="t_shirt">T-Shirts</option>
+            <option value="sweater">Sweaters</option>
+            <option value="coats">Coats</option>
+        </optgroup>
+        <optgroup label="Foot Wear">
+            <option value="sneakers">Sneakers</option>
+            <option value="boots">Boots</option>
+            <option value="sandals">Sandals</option>
+        </optgroup>
+    </select>
+
+    <!-- radio buttons => for small lists not worth a dropdown(less than 5) -->
+    <!-- input type attribute of “radio” -->
+
+    <!-- same name attribute allows radio buttons to detect each other -->
+    <!-- i.e. unselect when another radio button selected -->
+
+    <!-- name : ticket_type -->
+
+    <!-- default select => add checked attribute{or else comes unselected} -->
+
+    <h1>Ticket Type</h1>
+    <div>
+        <input type="radio" id="child" name="ticket_type" value="child">
+        <label for="child">Child</label>
+    </div>
+
+    <div>
+        <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+        <label for="adult">Adult</label>
+    </div>
+
+    <div>
+        <input type="radio" id="senior" name="ticket_type" value="senior">
+        <label for="senior">Senior</label>
+    </div>
+
+    <!-- checkboxes -->
+    <!-- input element with a type attribute of “checkbox”: -->
+    <h1>Pizza Toppings</h1>
+
+    <div>
+        <input type="checkbox" id="sausage" name="topping" value="sausage">
+        <label for="sausage">Sausage</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="onions" name="topping" value="onions">
+        <label for="onions">Onions</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="pepperoni" name="topping" value="pepperoni">
+        <label for="pepperoni">Pepperoni</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+        <label for="mushrooms">Mushrooms</label>
+    </div>
+
+
+    <div>
+        <input type="checkbox" id="newsletter" name="news_letter">
+        <label for="newsletter">Send me the news letter</label>
+      </div>
+
+      <!-- button element also accepts a type attribute that tells
+         the browser which kind of button it is dealing with -->
+
+
+         <!-- submit the form it is contained within. 
+            The type attribute has a value of submit by default -->
+         <button type="submit">Submit</button>
+
+         <!-- reset button clears all the data the user has entered into the form and sets 
+            all the inputs in the form back to what they were initially. -->
+         <button type="reset">Reset</button>
+
+         <!-- generic button that can be used for anything. -->
+         <button type="button">Click to Toggle</button>
+
+
+         <!-- a button within a form with the type value of submit(default)
+           will always try to make a new request and submit data back to the server.
+           Hence, for buttons that are used within a form 
+           for different purposes other than submitting the data,
+           the type attribute should always be specified to avoid unwanted effects 
+           of submitting a form. -->
+
+           <!-- fieldset element  -->
+           <!-- The fieldset element is a container element that allows us to group
+             related form inputs into one logical unit. -->
+
+             <fieldset>
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name">
+              
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name">
+              </fieldset>
+
+              <!-- its the box -->
+
+
+              <!-- legend -->
+              <!-- egend element is used to give field sets a heading or caption 
+                so the user can see what a grouping of inputs is for. -->
+
+                <fieldset>
+                    <legend>Contact Details</legend>
+                  
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                  
+                    <label for="phone_number">Phone Number:</label>
+                    <input type="tel" id="phone_number" name="phone_number">
+                  
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                  </fieldset>
+                  
+                  <fieldset>
+                    <legend>Delivery Details</legend>
+                  
+                    <label for="street_address">Street Address:</label>
+                    <input type="text" id="street_address" name="street_address">
+                  
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+                  
+                    <label for="zip_code">Zip Code:</label>
+                    <input type="text" id="zip_code" name="zip_code">
+                  </fieldset>
+
+
+</body>
+
+</html>
