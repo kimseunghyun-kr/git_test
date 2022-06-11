@@ -176,75 +176,108 @@
     <div>
         <input type="checkbox" id="newsletter" name="news_letter">
         <label for="newsletter">Send me the news letter</label>
-      </div>
+    </div>
 
-      <!-- button element also accepts a type attribute that tells
+    <!-- button element also accepts a type attribute that tells
          the browser which kind of button it is dealing with -->
 
 
-         <!-- submit the form it is contained within. 
+    <!-- submit the form it is contained within. 
             The type attribute has a value of submit by default -->
-         <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 
-         <!-- reset button clears all the data the user has entered into the form and sets 
+    <!-- reset button clears all the data the user has entered into the form and sets 
             all the inputs in the form back to what they were initially. -->
-         <button type="reset">Reset</button>
+    <button type="reset">Reset</button>
 
-         <!-- generic button that can be used for anything. -->
-         <button type="button">Click to Toggle</button>
+    <!-- generic button that can be used for anything. -->
+    <button type="button">Click to Toggle</button>
 
 
-         <!-- a button within a form with the type value of submit(default)
+    <!-- a button within a form with the type value of submit(default)
            will always try to make a new request and submit data back to the server.
            Hence, for buttons that are used within a form 
            for different purposes other than submitting the data,
            the type attribute should always be specified to avoid unwanted effects 
            of submitting a form. -->
 
-           <!-- fieldset element  -->
-           <!-- The fieldset element is a container element that allows us to group
+    <!-- fieldset element  -->
+    <!-- The fieldset element is a container element that allows us to group
              related form inputs into one logical unit. -->
 
-             <fieldset>
-                <label for="first_name">First Name</label>
-                <input type="text" id="first_name" name="first_name">
-              
-                <label for="last_name">Last Name</label>
-                <input type="text" id="last_name" name="last_name">
-              </fieldset>
+    <fieldset>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
 
-              <!-- its the box -->
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+    </fieldset>
+
+    <!-- its the box -->
 
 
-              <!-- legend -->
-              <!-- egend element is used to give field sets a heading or caption 
+    <!-- legend -->
+    <!-- egend element is used to give field sets a heading or caption 
                 so the user can see what a grouping of inputs is for. -->
 
-                <fieldset>
-                    <legend>Contact Details</legend>
-                  
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                  
-                    <label for="phone_number">Phone Number:</label>
-                    <input type="tel" id="phone_number" name="phone_number">
-                  
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                  </fieldset>
-                  
-                  <fieldset>
-                    <legend>Delivery Details</legend>
-                  
-                    <label for="street_address">Street Address:</label>
-                    <input type="text" id="street_address" name="street_address">
-                  
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city">
-                  
-                    <label for="zip_code">Zip Code:</label>
-                    <input type="text" id="zip_code" name="zip_code">
-                  </fieldset>
+    <fieldset>
+        <legend>Contact Details</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </fieldset>
+
+    <fieldset>
+        <legend>Delivery Details</legend>
+
+        <label for="street_address">Street Address:</label>
+        <input type="text" id="street_address" name="street_address">
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+
+        <label for="zip_code">Zip Code:</label>
+        <input type="text" id="zip_code" name="zip_code">
+    </fieldset>
+
+    <!-- hidden input type. This is used to create a form control
+                     that is invisible to the user, but is still sent to the server along 
+                     with the rest of the form data once submitted  -->
+    <input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+
+    <!-- image button control is rendered exactly like an <img> element. when clicked, the X and Y coordinates
+     of the click on the image are submitted. used to create hot maps -->
+    <input type="image" alt="Click me!" src="my-img.png" width="80" height="30">
+
+    <!-- file picker element -->
+    <!-- sends files -->
+    <!-- multiple attribute will allow multiple file sends -->
+
+    <input type="file" name="file" id="file" accept="image/*" multiple>
+
+    <!-- for direct access on mobile, accept attribute capture information. -->
+    <input type="file" accept="image/*;capture=camera">
+    <input type="file" accept="video/*;capture=camcorder">
+
+    <!-- common attribute for all form controls
+    
+    autofocus- the element should automatically have input focus when the page loads. Only one form-associated element in a document can have this attribute specified.
+    disabled - user cannot interact
+    form     - <form> element that the widget is associated with, used if it is not nested within that form. The value of the attribute must be the id attribute of a <form> element in the same document. This lets you associate a form control with a form it is outside of, even if it is inside a different form element.
+    name     - name of element submitted as httpresponse
+    value    - inital value                                       -->
+
+    <!-- for more controls, refer, -->
+    <!-- <input type="file" accept="audio/*;capture=microphone">https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls -->
+
+
+
 
 
 </body>
