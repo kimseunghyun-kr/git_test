@@ -1,0 +1,50 @@
+/* ez things to style with css */
+
+
+/*
+<form>
+<fieldset> and <legend>
+Single-line text <input>s (e.g. type text, url, email...), except for <input type="search">.
+Multi-line <textarea>
+Buttons (both <input> and <button>)
+<label>
+<output>  
+*/
+
+/* difficult */
+
+/* 
+Checkboxes and radio buttons
+<input type="search">
+*/
+
+/* ugly and hard */
+
+/* 
+<input type="color">
+Date-related controls such as <input type="datetime-local">
+<input type="range">
+<input type="file">
+Elements involved in creating dropdown widgets, including <select>, <option>, <optgroup> and <datalist>.
+<progress> and <meter>
+ */
+
+ /*  Inheriting should change their fonts to that of the parent's font family.
+ strange exception — <input type="submit"> does not inherit from the parent paragraph in Chrome.
+  Rather, it uses the font-family: system-ui.
+  
+  
+  This is another reason to use <button> elements over their equivalent input types! 
+  */
+
+
+  /* legend styling
+  
+  The <legend> element is okay to style, but it can be a bit tricky to control placement of it. 
+  By default it is always positioned over the top border of its <fieldset> parent, near the top left corner. 
+  
+
+  use position
+  
+  */
+
