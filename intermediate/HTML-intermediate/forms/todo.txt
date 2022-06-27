@@ -1,0 +1,7 @@
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Basic_controls
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_HTML5_controls
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Other_controls
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Styling_basics

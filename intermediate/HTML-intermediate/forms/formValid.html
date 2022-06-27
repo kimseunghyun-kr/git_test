@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formValid</title>
+</head>
+<body>
+
+    <!-- field is filled validation -->
+<!-- use the required tag to ensure something is in field -->
+<!-- the * to show required for user experience -->
+<form action="#" method="get">
+  <div>
+    <label for="user_email">*Email:</label>
+    <input type="email" id="user_email" name="user_email" required>
+  </div>
+  <br>
+
+  <div>
+    <label for="user_password">*Password:</label>
+    <input type="password" id="user_password" name="user_password" required>
+  </div>
+
+  <button type="submit">Login</button>
+</form>
+
+
+<!-- text length validation -->
+<form action="#" method="get">
+    <div>
+        <!-- minlength to validate minimum length -->
+      <textarea placeholder="What's happening?" minlength="3"></textarea>
+    </div>  
+
+    <div>
+      <!--maxlength for maximum length-->
+      <textarea placeholder="What's happening?" maxlength="20"></textarea>
+    </div>
+
+    <!-- validations are combinable -> though minlength and the required is abit redundant -->
+  
+    <button type="submit">Tweet</button>
+  </form>
+
+  <!-- number range validation -->
+
+  HTMLResult Skip Results Iframe
+EDIT ON
+<form action="#" method="get">
+
+    <!-- minimum range for number variables == 'min=' -->
+  <div>
+    <label for="quantity">Quantity</label>
+  </div>
+  <input type="number" id="quantity" name="quantity" min="1" value="0">
+  
+  <div>
+    <button type="submit">Place Order</button>
+  </div>
+
+<!-- maximum range for number variable == 'max=' -->
+  <div>
+    <label for="passengers">Passengers</label>
+  </div>
+  <input type="number" id="passengers" name="passengers" max="5" value="0">
+   
+  <div>
+
+</form>
+
+<!-- pattern validations -->
+<form action="#" method="get">
+    <div>
+      <label for="zip_code">Postal / Zip Code:</label>
+    </div>
+    <!-- pattern property -> with regex expression -->
+    <!-- title is a description that shows when the cursor is hovering on the textspace / and as errormessage for incorrect input -->
+    <input type="text" id="zip_code" name="zip_code" pattern="(\d{5}([\-]\d{4})?)" title="Please enter a valid zip code, example: 65251" placeholder="65251" required>
+  
+
+    <!-- pattern can only be used on <input> elements. some input element like <email> already uses such a validation -->
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+<!-- styling validations -->
+<!-- uses :valid and :invalid pseudoclasses in css-->
+  <form action="#" method="get">
+    <div>
+      <label for="email">*Email</label>
+    </div>
+    <input type="email" id="email" name="email">
+  
+    <div>
+      <label for="website">*Website</label>
+    </div>
+    <input type="url" id="website" name="website">
+  
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <!--  CSS input
+    input {
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+} 
+-->
+    
+</body>
+</html>
