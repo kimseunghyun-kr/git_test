@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My spending record</title>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>My spending record</h1>
+
+
+    <!-- The <thead> element must wrap the part of the table that is the header — 
+        this is usually the first row containing the column headings,
+         but this is not necessarily always the case. 
+         If you are using <col>/<colgroup> element, the table header should come just below those.
+
+
+The <tfoot> element needs to wrap the part of the table that is the footer — 
+    this might be a final row with items in the previous rows summed, for example.
+     You can include the table footer right at the bottom of the table as you'd expect,
+      or just below the table header (the browser will still render it at the bottom of the table).
+
+
+The <tbody> element needs to wrap the other parts of the table content that aren't in the table header or footer.
+     It will appear below the table header or sometimes footer,
+      depending on how you decided to structure it. -->
+
+
+      <!-- <tbody> is always included in every table, implicitly if you don't specify it in your code.
+         To check this, open up one of your previous examples that doesn't include <tbody> and look
+             at the HTML code in your browser developer tools
+              — you will see that the browser has added this tag for you.
+               You might wonder why you ought to bother including it at all 
+               — you should, because it gives you more control over your table structure and styling. -->
+      <table>
+        <caption>How I chose to spend my money</caption>
+          <thead>
+        <tr>
+            <th>Purchase</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Evaluation</th>
+            <th>Cost (€)</th>
+          </tr>
+          </thead>
+          <tfoot> <!-- <tfoot> element has caused the "SUM" row to go down to the bottom of the table.-->
+          <tr>
+            <td colspan="4">SUM</td>
+            <td>118</td>
+          </tr>
+        </tfoot>
+          <tr>
+            <td>Haircut</td>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>Great idea</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Lasagna</td>
+            <td>Restaurant</td>
+            <td>12/09</td>
+            <td>Regrets</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Shoes</td>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>Big regrets</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>Toothpaste</td>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+          </tr>
+    </table>
+
+    <h5>html tables advanced features and accessibility by MDN licensed under CC-BY-SA 2.5</h5>
+
+  </body>
+</html>
