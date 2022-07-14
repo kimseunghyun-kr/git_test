@@ -1,0 +1,13 @@
+/* In your CSS file, you import and define a custom font using the
+ @font-face rule, and then use as you would any other font-family. */
+
+
+ /* definition of my-cool-font */
+@font-face {
+    font-family: my-cool-font;
+    src: url(../fonts/the-font-file.woff);
+  }
+  
+  h1 {
+    font-family: my-cool-font, sans-serif;
+  }
