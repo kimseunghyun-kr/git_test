@@ -63,4 +63,12 @@ h1 {
   margin-right: calc(50% - 50vw);
 }
 
+
+
+-- trivia and links
+
+
 -> line height definition -> https://css-tricks.com/molten-leading-css/
+
+
+https://css-tricks.com/fun-viewport-units/#aa-breaking-the-container
