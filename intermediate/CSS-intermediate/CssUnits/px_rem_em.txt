@@ -1,0 +1,11 @@
+So to reiterate my conclusion: I definitely prefer using relative units to define font-size 
+so that you can respect the user’s settings, but I don’t personally think it’s a big deal 
+if your layout is complex enough that you cannot support it. If you’re using rem for fonts, 
+then I slightly prefer using pixels for elements such as margin and padding,
+but there is nothing wrong with using rem for that, if you prefer that scaling effect. ( with rem )
+
+In either case, it is important to consider these details and make a conscious decision either way. 
+Applying these concepts in a haphazard fashion is likely to make your site unresponsive and difficult
+for users that rely on assistive technology.
+
+https://codyloyd.com/2021/css-units/

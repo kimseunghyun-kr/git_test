@@ -1,0 +1,66 @@
+Viewport Width (vw) – A percentage of the full viewport width.
+ 10vw will resolve to 10% of the current viewport width, or 48px on a phone that is 480px wide.
+  The difference between % and vw is most similar to the difference between em and rem. 
+  A % length is relative to local context (containing element) width,
+   while a vw length is relative to the full width of the browser window.
+
+
+Viewport Height (vh) – A percentage of the full viewport height.
+ 10vh will resolve to 10% of the current viewport height.
+
+
+Viewport Minimum (vmin) – A percentage of the viewport width or height,
+ whichever is smaller. 10vmin will resolve to 10% of the current viewport width in portrait
+  orientations, and 10% of the viewport height on landscape orientations.
+
+
+Viewport Maximum (vmax) – A percentage of the viewport width or height, whichever is larger.
+ 10vmax will resolve to 10% of the current viewport height in portrait orientations, 
+ and 10% of the viewport width on landscape orientations.
+  Sadly, and strangely, vmax units are not yet available on Internet Explorer or Edge.
+
+
+
+  --to control rate of scaling use calc()
+
+  body {
+  // font grows 1px for every 100px of viewport width
+  font-size: calc(16px + 1vw);
+  // leading grows along with font,
+  // with an additional 0.1em + 0.5px per 100px of the viewport
+  line-height: calc(1.1em + 0.5vw);
+}
+
+--setting max of scaling 
+
+h1 {
+  font-size: calc(1.2em + 3vw);
+}
+
+@media (min-width: 50em) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+
+--fluid aspect ratios
+
+.full-width {
+  width: 100vw;
+  max-width: 30em;
+  height: calc(100vw * (9/16));
+  max-height: calc(30em * (9/16));
+}
+
+(9: 16 aspect ratio)
+
+
+-- line breaking of elements out of the container
+
+.full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+-> line height definition -> https://css-tricks.com/molten-leading-css/
