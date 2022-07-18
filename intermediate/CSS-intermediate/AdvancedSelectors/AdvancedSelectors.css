@@ -1,0 +1,243 @@
+/* > is for child */
+
+/* given */
+
+/* 
+<main class="parent">
+  <div class="group1">
+    <div class="grand-child group1"></div>
+  </div>
+  <div class="group2">
+    <div class="grand-child group2"></div>
+  </div>
+  <div class="group3">
+    <div class="grand-child group3"></div>
+  </div>
+</main>
+ */
+
+main div {
+    /* descendant combinator */
+    /* this will select all child groups and grandchild groups */
+}
+
+main>div {
+    /* will select the child group only */
+}
+
+main>div>div {
+    /* will select thee grand-child groups only */
+}
+
+.group1+div {
+    /* will select tag div with the class child group2 */
+    /* only select element that is at the same level of indentation, that is adjacent downwards */
+}
+
+.group1+div+div {
+    /* will select tag div with the class child group3 */
+}
+
+
+.group1~div {
+    /* select all of .group1's siblings - in this case the 2nd and 3rd .child divs */
+}
+
+
+
+
+
+/* pseudo - class vs pseudo elements */
+
+/* pseudo class definition */
+
+/* a SELECTOR that selects elements that are in a specific state  -> specifishitty (0,0,1,0) */
+
+/* reason for existence */
+/*  helps to cut down on excess classes in markup, thus allowing flexible, maintainable code. */
+
+/* keyword  - > : (colon) pseudo-class-name */
+
+
+
+/* user action pseudo classes example */
+
+/* :focus
+        applies to an element that is currently selected by the user either
+        through selecting it with their cursor or using their keyboard.
+
+    :hover
+        affect anything under the user’s mouse pointer. 
+        It can be used to give extra oomph to buttons and links to highlight that
+        they’re interactable, or to trigger a drop-down menu.
+
+    :active 
+        applies to elements that are currently being clicked,
+        and is especially useful for giving your user feedback that their action had an effect.
+        Good to give your buttons and other interactive elements more ‘tactile’ feedback.
+
+
+
+    /*links*/
+
+        a:visited {
+            color: purple;
+        }
+
+        a:unvisited {
+            color: blue;
+        }
+
+
+
+    /*structural*/
+
+        /*
+        :root
+            a special class that represents the very top level of your document 
+            - The one element that has no parents. Generally when working with the web,
+              this is equivalent to the html element, but there are a few subtle differences.
+
+            :root is generally the place where you will place your ‘global’ CSS rules
+            that you want available everywhere 
+            - such as your custom properties and CSS variables,
+            or rules such as box-sizing: border-box;.
+
+
+        :first-child && :last-child
+            match elements that are the first or last sibling.
+
+
+        :empty
+            match elements that have no children at all
+            
+
+        :only-child
+            match elements that don’t have any siblings.
+
+        :nth-child.
+        
+            /*examples*/
+
+            .myList:nth-child(5) {/* Selects the 5th element with class myList */}
+
+            .myList:nth-child(3n) { /* Selects every 3rd element with class myList */}
+
+            .myList:nth-child(3n + 3) { /* Selects every 3rd element with class myList, beginning with the 3rd */}
+
+            .myList:nth-child(even) {/* Selects every even element with class myList */}
+
+
+
+
+
+
+
+
+
+
+/* pseudo element definition */
+/* similar to pseudo class but
+act as if you had added a whole new HTML element into the markup */
+
+/* specifishitty (0,0,0,1) */
+
+/* keyword -> :: (double colon) pseudo-element-name */
+
+
+/* common usage with pseudo-elements */
+
+    ::marker 
+        /* - customize the styling of your <li> elements’ bullets or numbers. */
+
+    ::first-letter && ::first-line
+        /* - give special styling to the first letter or line of some text. */
+
+    ::selection
+        /* - change the highlighting when a user selects text on the page. */
+
+
+
+/* Adding content with css */
+
+    /* ::before and ::after */
+        
+    /* i.e.) */
+    /* <p class="box">Content in the box in my HTML page.</p> */
+        
+        .box::before {
+            content: "This should show before the other content."
+        }   
+    
+        /* the above would add text content before the main text content in the <p> classname box */
+        /* ::after would likely have simuilar effect, just that the content within css comes after */
+
+
+
+
+
+/* reference */
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements */
+
+
+/* Attribute selectors */
+
+/* 
+attribute-
+    anything in the opening tag of an HTML element 
+    - such as src='picture.jpg' or href="www.theodinproject.com". 
+    */
+
+/* Attribute selectors have the same specificity as classes and pseudo-classes (0, 0, 1, 0). */
+/* 
+[attribute] 
+    - This general selector will select anything where the given attribute exists.
+    Its value doesn’t matter.
+
+selector[attribute] 
+    - Attribute selector combined with other selectors such as class or element selectors.
+
+[attribute="value"] 
+    - used to match a specific attribute with a specific value. (to get vv specific) */
+
+
+    /* example */
+    [src] {
+        /* This will target any element that has a src attribute. */
+    }
+    
+    img[src] {
+        /* This will only target img elements that have a src attribute. */
+    }
+    
+    img[src="puppy.jpg"] {
+        /* This will target img elements with a src attribute that is exactly "puppy.jpg" */
+    }
+
+    /* combining regex */
+
+    [class^='aus'] {
+        /* Classes are attributes too!
+          This will target any class that begins with 'aus':
+          class='austria'
+          class='australia'
+        */
+    }
+      
+    [src$='.jpg'] {
+        /* This will target any src attribute that ends in '.jpg':
+        src='puppy.jpg'
+        src='kitten.jpg'
+        */
+    }
+      
+    [for*='ill'] {
+        /* This will target any for attribute that has 'ill' anywhere inside it:
+        for="bill"
+        for="jill"
+        for="silly"
+        for="ill"
+        */
+    }
+
+    /* MDN webdocs link = https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
