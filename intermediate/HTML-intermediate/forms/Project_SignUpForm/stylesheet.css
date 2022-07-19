@@ -1,0 +1,50 @@
+@font-face {
+    font-family: Norse-Bold;
+    src: url(./fonts/Norse-Bold.otf);
+}
+
+.mainBox {
+    display: flex;
+    height : 100vh;
+    width : 100vw;
+    padding: 1% 1% 1% 1%;
+    background-color: darkgrey;
+}
+
+.rightBox {
+    padding: 10vh 3vw 10vh 4vw;
+    width : 50vw;
+}
+
+.leftBox {
+    background-image: url(./images/GangNamHyunBin.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    width : 40vw;
+    position: relative;
+}
+
+.introText {
+    font-size : 1.8vw;
+    font-weight : bold;
+    font-family : sans-serif;
+}
+
+.imgBox {
+    position: absolute;
+    top: 25%;
+    padding-left: 15%;
+    --imgBoxHeight: 10vh;
+    
+}
+
+.title {
+    display: inline;
+    font-size: var(--imgBoxHeight);
+}
+
+#emergencLogo {
+    display: inline;
+    height: var(--imgBoxHeight);
+}

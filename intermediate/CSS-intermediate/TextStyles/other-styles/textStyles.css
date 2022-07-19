@@ -1,0 +1,66 @@
+/* font-style */
+
+h1 {
+    font-style: italic;
+}
+
+/* typically used for italics 
+  -> use em tag in html if italics needed for emphasis*/
+
+/* html code */
+
+/* <p>I <em>never</em> said he stole your money</p>
+<p>I never said <em>he</em> stole your money</p>
+<p>I never said he stole <em>your</em> money</p> */
+
+/* letter-spacing */
+/* changes the space between letters in a word. */
+h1 {
+    font-family: 'COUTUREBold';
+    margin: 0;
+    font-size: 38px;
+}
+
+.wide {
+    font-size: 24px;
+    letter-spacing: .5em;
+}
+
+.narrow {
+    font-size: 48px;
+    letter-spacing: -.15em;
+}
+
+
+/* line-height */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+}
+
+​ p.line-height {
+    line-height: 1.5;
+}
+
+/* Line height adjusts the space between lines in wrapped text. */
+/* increases spacing between lines */
+
+/* text-shadow */
+/* mdn reference : https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow  */
+/*  adds a shadow around the text in the selected element.  */
+
+/* ellipsis */
+.overflowing {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*  truncate overflowing text with an ellipsis.  */
+
+/* other properties needed because the defailt behaviour
+  of text simply printing outside its container is not considered overflow */
+  
+/* reference */
+/* https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/ */
