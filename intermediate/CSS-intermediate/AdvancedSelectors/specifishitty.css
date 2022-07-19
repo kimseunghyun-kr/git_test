@@ -1,0 +1,17 @@
+/* how specifishitty is calculated
+
+most specific                                                              least specific
+
+style attribute     ID              class/pseudo-class/attribute           elements(tags)
+
+
+In otherwords:
+
+If the element has inline styling, that automatically wins (1,0,0,0 points)
+For each ID value, apply 0,1,0,0 points
+For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
+For each element reference, apply 0,0,0,1 point */
+
+
+/* reference */
+/* https://css-tricks.com/specifics-on-css-specificity/ */

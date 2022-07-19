@@ -1,0 +1,32 @@
+
+
+
+/* position: static;*/
+    /* This is the default value. follows normal flow of document */
+/* position: relative;*/
+    /* follows normal flow of document and enables top right bottom left. */
+    /* it is relative to the position the element should be along the flow of document */
+    /* makes it an anchor for absolutely positioned elements */
+/* position: absolute; */
+    /* removes the element from normal flow of document */
+    /* able to anchor itself to parent box(containing block) which is non-static */
+    /* The element establishes a new block formatting context (BFC) for its contents. */
+
+    /* bfc reference link : https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context */
+/* position: fixed; */
+    /* removes the element from normal flow of document */
+    /* just absolute even when scrolling  */
+
+
+/* position: sticky; */
+    /* follows normal flow of document until top of screen hits it */
+    /* after the top of screen hits, becomes fixed; */
+    /* the threshold can be changed* -> need not be fixe d t top of the page */
+
+/* Global values */
+position: inherit;
+position: initial;
+position: revert;
+position: revert-layer;
+position: unset;  
+
