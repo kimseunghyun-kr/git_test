@@ -1,0 +1,96 @@
+/* Custom properties (also known as CSS variables) */
+
+.error-modal {
+    --color-error-text: red;
+    --modal-border: 1px solid black;
+    --modal-font-size: calc(2rem + 5vw);
+  
+    color: var(--color-error-text);
+    border: var(--modal-border);
+    font-size: var(--modal-font-size);
+  }
+
+
+/* declaration :
+        -> double hyphen followed by a case-sensitive, hyphen-separated property name  */
+
+/* usage/access :
+        var() function,-> params == propertyname , including the double hyphen at the beginning.
+
+/* inheritance :
+        -> the variables are inherited from parent scope to child scope, and can be modified at the child.
+
+/* computation :
+        -> only when the selector it is present (also by inheritance) in is called upon */
+
+/* error-handling :
+
+        -> for normal : the used value discarded, 
+                        elements assigned the values behave as if declaration simply did not exist */
+
+    /*  -> for custom : if there is a runtime invalidity of current var()(current variable) substitution,
+              the initial/inherited value would be used instead */
+            
+        /* i.e. */
+            /* <p>This paragraph is initially black.</p> */
+            :root {
+                --text-color: 16px;
+            }
+              
+              p {
+                color: blue;
+            }
+              
+              p {
+                color: var(--text-color);
+            }
+
+            /* usage of custom property would return black here as initial value = black -> fallback = none
+               also, the blue won't override because it appears earlier in the css , with same specifishitty
+               would be overriden by the declaration using the custom property */
+
+
+            /* CSS */
+            p {
+              color: blue;
+            }
+
+            p {
+              color: 16px;
+            }
+        
+            /* usage of normal property would return blue as the color:16px would be ignored */
+        
+
+/* dissecting var() */
+/* var(property/variable to use , fallback property/variable) */
+
+/* i.e */
+/* background-color: var(--undeclared-property, black);
+   color: var(--undeclared-again, var(--color-text, yellow)); */
+
+
+/* scope of css variables */
+
+/* determined by the selector. If descendant -> yes, if sibling -> no */
+/* similar to how child class can access, nonrelated classes cannot */
+
+
+/* global css variable */
+
+/* declare in :root {} --> same thing as html selector but higher specifishitty so it takes priority */
+
+/* :root {
+        (is a pseudo-class)
+} */
+
+/* because it is also a selector, can combine with other css classes, such as root.light / root.dark */
+/* so that if class of html tag change, different selectors are chosen -> diff theme*/
+
+
+
+/* @media (prefers-color-scheme) --> checks user's os color scheme preference */
+/* this media query only has light and dark mode as of current */
+
+/* mdn webdocs reference */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
