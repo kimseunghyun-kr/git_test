@@ -1,0 +1,43 @@
+/* definition */
+
+/* reusable pieces of code which perform specific tasks, parameters accepted from the parentheses */
+
+/* Unlike other programming language, CSS does not allow us to create our own functions. */
+/* only a predefined library of functions will be used */
+
+
+/* common and impt functions */
+
+
+/* calc() */
+
+/* used to */
+/* mix units -> calc(400px + 0.5vh)*/
+/* nested calcs -> calc(calc()-calc()) */
+
+
+/* min() */
+
+/* used to : Math.min() */
+/* width: min(150px, 100%) -> If there are 150px available to the image, it will take up all 150px. 
+                           -> else, the image will switch to 100% of the parent’s width. */
+
+/* width: min(80ch, 100vw - 2rem); -> math possible within parentheses */
+
+
+/* max() */
+
+/* used to: Math.max() */
+/* same as min but opposite */
+
+
+/* clamp(min,ideal,max) */
+/* used to : make website responsive */
+
+/* h1 {
+    font-size: clamp(320px, 80vw, 60rem);
+  } */
+
+    /* -> smallest acceptable font-size = 320px.
+       -> largest acceptable font-size = 60rem
+       -> ideal font-size = 80vw. */

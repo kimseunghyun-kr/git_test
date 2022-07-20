@@ -150,7 +150,7 @@ act as if you had added a whole new HTML element into the markup */
     ::marker 
         /* - customize the styling of your <li> elements’ bullets or numbers. */
 
-    ::first-letter && ::first-line
+    ::first-letter /*and*/ ::first-line
         /* - give special styling to the first letter or line of some text. */
 
     ::selection

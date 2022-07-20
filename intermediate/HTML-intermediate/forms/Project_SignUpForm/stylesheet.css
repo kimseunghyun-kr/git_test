@@ -3,48 +3,134 @@
     src: url(./fonts/Norse-Bold.otf);
 }
 
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 96.1vh;
+    width : 98vw;
+}
+
 .mainBox {
     display: flex;
-    height : 100vh;
-    width : 100vw;
+    height : 100%;
+    width : 100%;
+    padding: 0px;
+    margin: 0px;
     padding: 1% 1% 1% 1%;
     background-color: darkgrey;
 }
 
 .rightBox {
-    padding: 10vh 3vw 10vh 4vw;
-    width : 50vw;
+    padding: 0px;
+    margin: 0 ;
+    width : 64vw;
+    /* border: 3px solid black; */
+    min-height : 96vh;
 }
 
 .leftBox {
+    border: 0px;
+    margin: 0px;
     background-image: url(./images/GangNamHyunBin.jpg);
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
-    width : 40vw;
+    min-width: 400px;
+    --leftBoxWidth : 34vw;
+    width : var(--leftBoxWidth);
     position: relative;
 }
 
 .introText {
-    font-size : 1.8vw;
+    
+    font-size: clamp(20px,1.8vw, 2.5rem);
     font-weight : bold;
     font-family : sans-serif;
 }
 
 .imgBox {
+    min-width: 400px;
     position: absolute;
-    top: 25%;
-    padding-left: 15%;
+    top: 23.5%;
+    width: var(--leftBoxWidth);
     --imgBoxHeight: 10vh;
+    background-color: rgba(100,100,100,0.87);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: calc(20px + 0.5*calc(5vh));
+    padding: 1.5vh 0 1.5vh 0;
     
 }
 
 .title {
+    margin-top: 1.2rem;
     display: inline;
-    font-size: var(--imgBoxHeight);
+    color: rgb(211, 211, 211);
+    vertical-align: middle;
 }
 
 #emergencLogo {
+    vertical-align: middle;
     display: inline;
-    height: var(--imgBoxHeight);
+    height: 6.2rem;
+    width:auto;
+}
+
+.textHalf {
+    padding: 5% 2.5% 3% 2.5%;
+    min-height: 20vh;
+}
+
+.actualForm {
+    padding: 0.01% 2.5% 2.5% 2.5%;
+    background-color: rgb(190,190,190);
+    display: grid;
+    min-height: 33vh;
+    overflow: hidden;
+    /* height: clamp(20vh, 22vh , 27vh); */
+    
+    /* border: 3px solid black; */
+}
+
+.submissionHalf {
+    padding: 5% 2.5% 3% 2.5%;
+}
+
+#submitBtn {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: 0px;
+    color:rgb(211, 211, 211);
+    background-color: rgb(243, 70, 2);
+    font-size: 1.3rem;
+}
+fieldset {
+    /* border: 3px solid black; */
+    padding: 0;
+    border:0;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.alignInputLabel{
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+    padding-right: 7rem;
+    
+    padding-top: 1rem;
+
+}
+
+input {
+    border-radius: 2px;
+    height: 1.3rem;
+    border : 0;
+}
+.footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
 }

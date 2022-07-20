@@ -13,38 +13,66 @@
     <div class="mainBox">
         <div class="leftBox">
             <div class="imgBox">
-                <img src="./images/symbolemergency.jpg" id = "emergencLogo">
-                <h2 class = "title">강남소방서</h2>
+                <img src="./images/symbolemergency.jpg" id="emergencLogo">
+                <h2 class="title">강남소방서</h2>
             </div>
             <div class="photodescript">
-                <p> Photo by </p>
-                <a> Halie West</a>
-                <p>on</p>
-                <a>Unsplash</a>
+  
             </div>
         </div>
 
         <div class="rightBox">
             <div class="textHalf">
-                <p class ="introText"> This is not a real online service! You know you need something 
+                <p class="introText"> This is not a real online service! You know you need something
                     <br> like this in your life to help you
-                    realize your deepest dreams.<br> Sign up <em>now</em> to get started.</p>
-                <p class = "introText"> You  <em>know</em> you want to.</p>
+                    realize your deepest dreams.<br> Sign up <em>now</em> to get started.
+                </p>
+                <p class="introText"> You <em>know</em> you want to.</p>
             </div>
 
 
             <div class="formHalf">
                 <div class="actualForm">
                     <h3>Lets do this!</h3>
-                    <form>
+                    <form id="signUP">
+                        <fieldset name="PersonName">
+                            <div class = "alignInputLabel">
+                                <label for="Surname">FIRST NAME(성)</label>
+                                <input type="text" placeholder="Hong" id="Surname">
+                            </div>
+                            <div class = "alignInputLabel">
+                                <label for="givenName">LAST NAME(이름)</label>
+                                <input type="text" placeholder="GilDong" id="givenName">
+                            </div>
+                        </fieldset>
+                        <fieldset name="ContactInfo">
+                            <div class = "alignInputLabel">
+                                <label for="email">EMAIL(이메일)</label>
+                                <input type="email" placeholder="example@gmail.com" id="email">
+                            </div>
+                            <div class = "alignInputLabel">
+                                <label for="phoneNo">PHONE NUMBER(전화번호)</label>
+                                <input type="tel" placeholder="010-1234-5678" id="phoneNo">
+                            </div>
+                        </fieldset>
+                        <fieldset name="PasswordSet">
+                            <div class = "alignInputLabel">
+                                <label for="pw">PASSWORD(비밀번호)</label>
+                                <input type="password" placeholder="password" id="pw">
+                            </div>
+                            <div class = "alignInputLabel">
+                                <label for="cfmPw">CONFIRM PASSWORD(비밀번호 확인)</label>
+                                <input type="password" placeholder="confirm password" id="cfmPw">
+                            </div>
+                        </fieldset>
 
                     </form>
                 </div>
 
                 <div class="submissionHalf">
-                    <button>create account</button>
-                    <p> Already have an account? </p>
-                    <a>Log in</a>
+                    <button type="submit" id="submitBtn" form="signUP">create account</button>
+                    <p class="footer"> Already have an account? <a href="about.blank"
+                            style="color : rgb(243, 70, 2)">Log in</a> </p>
                 </div>
             </div>
         </div>
