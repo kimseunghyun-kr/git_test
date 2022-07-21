@@ -17,7 +17,11 @@ body {
     padding: 0px;
     margin: 0px;
     padding: 1% 1% 1% 1%;
-    background-color: darkgrey;
+    background-color: antiquewhite;
+    /* background-image: url(./images/firemen.webp); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+
 }
 
 .rightBox {
@@ -51,28 +55,25 @@ body {
 .imgBox {
     min-width: 400px;
     position: absolute;
-    top: 23.5%;
+    top: 22.5%;
     width: var(--leftBoxWidth);
+    height: 17.5%;
+    display: flex;
     --imgBoxHeight: 10vh;
-    background-color: rgba(100,100,100,0.87);
-    text-align: center;
+    background-color: rgba(116, 112, 112, 0.87);
+    align-items: center;
     overflow: hidden;
     white-space: nowrap;
     font-size: calc(20px + 0.5*calc(5vh));
-    padding: 1.5vh 0 1.5vh 0;
+    justify-content: center;
     
 }
 
 .title {
-    margin-top: 1.2rem;
-    display: inline;
-    color: rgb(211, 211, 211);
-    vertical-align: middle;
+       color: rgb(211, 211, 211);
 }
 
 #emergencLogo {
-    vertical-align: middle;
-    display: inline;
     height: 6.2rem;
     width:auto;
 }
@@ -84,10 +85,12 @@ body {
 
 .actualForm {
     padding: 0.01% 2.5% 2.5% 2.5%;
+    width: 100%;
     background-color: rgb(190,190,190);
     display: grid;
     min-height: 33vh;
     overflow: hidden;
+    box-shadow: 10px 5px rgb(90 90 90);
     /* height: clamp(20vh, 22vh , 27vh); */
     
     /* border: 3px solid black; */
@@ -125,7 +128,7 @@ fieldset {
 }
 
 input {
-    border-radius: 2px;
+    border-radius: 3px;
     height: 1.3rem;
     border : 0;
 }
