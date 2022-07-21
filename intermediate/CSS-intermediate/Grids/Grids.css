@@ -1,0 +1,25 @@
+/* how to make a element a grid */
+class {
+    display: grid;
+}
+
+/* Only the direct child of the element will be grid items. */
+
+/* without borders -> grid layout will not be visible. to see -> devtools -> layout options -> select overlay */
+
+/* grid track -> the structure of the grid */
+
+/* defining grid tracks */
+class2 {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 50px 100px;
+}
+
+/* shortened */
+
+class3 {
+    display: grid;
+    grid-template: 50px 100px / 100px 100px; 
+    /* (row then column) */
+  }
