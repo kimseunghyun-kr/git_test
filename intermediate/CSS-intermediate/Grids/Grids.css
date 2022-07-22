@@ -20,6 +20,39 @@ class2 {
 
 class3 {
     display: grid;
-    grid-template: 50px 100px / 100px 100px; 
+    grid-template: 50px 100px / 100px 100px;
     /* (row then column) */
+}
+
+
+/* Explicit vs Implicit Grid */
+/* explicit grid -> grid structure defined by the grid-template-* */
+/* implicit -> any grid items that are not in the defined zone of the grid template */
+
+/* size properties set in the explicit zone of the grid does nto apply to the implicit added grids */
+/* We can set the implicit grid track sizes using the grid-auto-rows and grid-auto-columns properties */
+
+
+/* the implicit grid is added vertically, but it can be changed by grid-auto-flow: column property
+ and those implicit track sizes can be defined with the grid-auto-columns property. */
+
+
+
+ /* GAP */
+
+ /* literally a gap between the rows and columns */
+
+ .container {
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 50px 50px;
+    column-gap: 10px;
+    row-gap: 100px;
+
+    /* shortened */
+    gap: 10px 100px;
   }
+
+
+  
+
