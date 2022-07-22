@@ -24,6 +24,27 @@ class3 {
     /* (row then column) */
 }
 
+/* using repeats */
+
+class3 {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    /* (row then column) */
+}
+
+/* assigning names to lines */
+.container {
+    /*number assigned by default*/
+    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 100px [third-line] auto [last-line];
+    /*^^ line can have more than 1 name, separate by whitespace*/
+}
+
+/* these named lines can be referenced by name, and count(for multiple lines with same name */
+.item {
+    grid-column-start: col-start 2;
+}
+
 
 /* Explicit vs Implicit Grid */
 /* explicit grid -> grid structure defined by the grid-template-* */
@@ -38,11 +59,11 @@ class3 {
 
 
 
- /* GAP */
+/* GAP */
 
- /* literally a gap between the rows and columns */
+/* literally a gap between the rows and columns */
 
- .container {
+.container {
     display: grid;
     grid-template-columns: 50px 50px;
     grid-template-rows: 50px 50px;
@@ -51,8 +72,159 @@ class3 {
 
     /* shortened */
     gap: 10px 100px;
+}
+
+
+/* grid-template-area(container) */
+
+/* specifies a grid-area property for cells on the grid which can be refernced. */
+/* Repeating the name of a grid area causes the content to span those cells.
+ A period signifies an empty cell.
+  The syntax itself is like naming the grid -> explicit grid */
+
+
+/* 
+<grid-area-name> – the name of a grid area specified with grid-area
+. – a period signifies an empty grid cell
+none – no grid areas are defined */
+
+.container {
+    grid-template-areas:
+        "<grid-area-name> | . | none | ..."
+        "...";
+}
+
+/* usage example */
+
+.item-a {
+    grid-area: header;
+}
+
+.item-b {
+    grid-area: main;
+}
+
+.item-c {
+    grid-area: sidebar;
+}
+
+.item-d {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+}
+
+
+/* justify-items */
+
+/* Aligns grid items along the inline (row) axis 
+  (as opposed to align-items which aligns along the block (column) axis).
+  This value applies to all grid items inside the container. */
+
+/* 
+start – aligns items to be flush with the start edge of their cell
+end – aligns items to be flush with the end edge of their cell
+center – aligns items in the center of their cell
+stretch – fills the whole width of the cell (this is the default)
+ */
+
+ .container {
+    /* justify-items: start | end | center | stretch; */
+  }
+
+  /* can be used on both the grid container and the grid-items; */
+
+  /* align items */
+
+  /* 
+  Aligns grid items along the block (column) axis (as opposed to justify-items which aligns along the inline (row) axis). This value applies to all grid items inside the container.
+
+Values:
+
+stretch – fills the whole height of the cell (this is the default)
+start – aligns items to be flush with the start edge of their cell
+end – aligns items to be flush with the end edge of their cell
+center – aligns items in the center of their cell
+baseline – align items along text baseline. There are modifiers to baseline — first baseline and last baseline which will use the baseline from the first or last line in the case of multi-line text.
+.container {
+  align-items: start | end | center | stretch;
+}
+ */
+
+
+ /* shorten align and justify --> place - items*/
+
+ /* <align-items> / <justify-items> 
+ – The first value sets align-items, the second value justify-items. 
+ If the second value is omitted, the first value is assigned to both properties. */
+
+ .center {
+    display: grid;
+    place-items: center / start;
   }
 
 
-  
+  /* aligning the grid itself to the container the grid is within */
 
+  /* justfify - content */
+
+  /* This property aligns the grid along the inline (row) axis 
+  (as opposed to align-content which aligns the grid along the block */
+
+
+  /* 
+start – aligns the grid to be flush with the start edge of the grid container
+end – aligns the grid to be flush with the end edge of the grid container
+center – aligns the grid in the center of the grid container
+stretch – resizes the grid items to allow the grid to fill the full width of the grid container
+space-around – places an even amount of space between each grid item, with half-sized spaces on the far ends
+space-between – places an even amount of space between each grid item, with no space at the far ends
+space-evenly – places an even amount of space between each grid item, including the far ends
+
+
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+} */
+
+
+/* minmax() */
+
+/* can be only used on */
+
+/* grid-template-columns
+grid-template-rows
+grid-auto-columns
+grid-auto-rows */
+/* does :
+The minimum size the grid track can be
+The maximum size the grid track can be
+growth and shrinkage is minmaxed
+(in place of the size); 
+
+-> clamp can also be used;
+*/
+
+
+/* auto-fit / auto fill */
+/* returns “the largest possible positive integer” 
+WITHOUT the grid items overflowing their container. */
+
+/* -> paired well with minmax -> automatically decide how many rows/columns -> dynamic */
+
+/* autofill vs autofit */
+/* if there are fewer items than can fill up the entirety of the grid row once AND
+    the grid is expanded to a size where another grid item could fit*/
+/*  auto-fit keeps the grid items at their max size.
+    auto-fill, makes the grid item to be at their min size.*/
+    
+    /* to be specific, (once the space becomes available to add another grid item,
+     even if there isn’t one to be rendered.)  */ 
+/* reference */
