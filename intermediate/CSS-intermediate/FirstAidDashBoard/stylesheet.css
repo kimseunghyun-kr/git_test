@@ -2,13 +2,18 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template: 1fr 8fr /1fr 8fr;
+    grid-template: 1fr 8fr / minmax(125px, 1.5fr) 7fr;
 }
 
 .sidebar {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
     background-color: rgb(247, 175, 175);
+    display: grid;
+    grid-template-rows: minmax(60px, 1fr) 3fr 2fr 3fr;
+    gap : 15px;
+    justify-items: start;
+    align-items: center;
 }
 
 .header {
@@ -16,18 +21,19 @@
     grid-column: 2/3;
     
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: 0.5fr 0.5fr / 0.5fr 0.5fr;
 }
 
 .upper {
     grid-row: 1 / 2;
     grid-column: 1 / 3;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .search {
     grid-column: 1 / 3;
+    height: clamp(50px, 15%, 25%);
 }
 
 .userIcons {
@@ -72,4 +78,37 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+}
+
+.options, .dir-links {
+    list-style: none;
+    display: grid;
+    padding: 0;
+    font-size: clamp(17px , 1.2vw , 1.5vw);
+    gap: 10px;
+    justify-items: start;
+}
+
+.options {
+    grid-template-rows: repeat(3, 1fr) ;
+    
+}
+
+.dir-links{
+    grid-template-rows: repeat(6,1fr);
+  
+}
+
+.logoNBrand {
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.logo {
+    object-fit: cover;
+    height: clamp(60px, 30%, 30%);
+    width: clamp(60px, 30%, 30%);
+    
+
 }
