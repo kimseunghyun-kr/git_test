@@ -15,10 +15,15 @@ Book.prototype.addBookToLibrary = function () {
         temp.title = this.title;
         temp.textContent = this.title;
         temp.data = Object.freeze(this);
-        console.log("*************");
-        console.log(temp.data);
-        console.log("*************");
+        // console.log("*************");
+        // console.log(temp.data);
+        // console.log("*************");
         library.appendChild(temp);
+
+        let readBtn = document.createElement("button");
+        readBtn.textContent = this.read ? "read" : "not read";
+        readBtn.addEventListener('click', changeReadStatus);
+        temp.appendChild(readBtn);
         let delBtn = document.createElement('button');
         delBtn.addEventListener('click', deleteBook);
         delBtn.textContent = "delete Book";
@@ -31,6 +36,19 @@ Book.prototype.addBookToLibrary = function () {
 
 let myLibrary = [];
 
+function changeReadStatus() {
+    let BookDom = this.parentElement;
+    let index = myLibrary.findIndex( book => {
+        return book == BookDom.data;
+    });
+
+    console.log(myLibrary[index].read);
+    myLibrary[index].read = false;
+    console.log(myLibrary[index]);
+    refresh(myLibrary);
+
+}
+
 function refresh(libraryArray) {
     let library = document.querySelector(".libraryTable");
     library.innerHTML = '';
@@ -40,6 +58,11 @@ function refresh(libraryArray) {
         temp.textContent = x.title;
         temp.data = Object.freeze(x);
         library.appendChild(temp);
+        let readBtn = document.createElement("button");
+        console.log(x.read);
+        readBtn.textContent = x.read ? "read" : "not read";
+        readBtn.addEventListener('click', changeReadStatus);
+        temp.appendChild(readBtn);
 
         let delBtn = document.createElement('button');
         delBtn.addEventListener('click', deleteBook);
@@ -105,6 +128,7 @@ function inputProc() {
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
     let isRead = document.getElementById("isRead").checked;
+
 
     let newBook = new Book(bookName.value, author, pages, isRead);
     newBook.addBookToLibrary();
