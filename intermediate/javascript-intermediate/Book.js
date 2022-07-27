@@ -38,13 +38,13 @@ let myLibrary = [];
 
 function changeReadStatus() {
     let BookDom = this.parentElement;
-    let index = myLibrary.findIndex( book => {
-        return book == BookDom.data;
-    });
+    let index = myLibrary.indexOf(BookDom.data);
+    myLibrary[index] = new Book(BookDom.data.title, BookDom.data.author, BookDom.data.pages, !BookDom.data.read);
+    // myLibrary.map( book => {
+    //     return book == BookDom.data ? new Book(book.title, book.author, book.pages, !book.read) :book;
+    // });
 
-    console.log(myLibrary[index].read);
-    myLibrary[index].read = false;
-    console.log(myLibrary[index]);
+ 
     refresh(myLibrary);
 
 }
