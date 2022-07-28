@@ -1,19 +1,38 @@
-let game = (function() {
+let game = (function(doc) {
     let board = [[" "," " ," " ], [" " ," " ," " ], [" " ," " ," " ]];
     let boardLen = 3;
-    let fillboard = (player, i ,j) => {
+    
+
+    let fillboard = ( elem ) => {
+        console.log(elem);
+        let i = elem.dataset.x;
+        let j = elem.dataset.y;
         if(_isBoardfilled(i,j)) {
             alert("fill somewhere unfilled");
         } else {
-            if(player.ident == 1) {
+            if(currPlayer.ident == 1) {
                 board[i][j] = "O";
+                elem.innerText = "O";
             } else {
                 board[i][j] = "X";
+                elem.innerText = "X";
             }
-            _isWin(player);
-            _nextTurn(player);
+            if(_isWin()) {
+                alert("player" + currPlayer.ident +  "  won");
+                _reset();
+                currPlayer = player1();
+            } else {
+                _nextTurn();
+            }
+            // _nextTurn();
         }
         
+    }
+
+    let _reset = function() {
+        currSession = game(doc);
+        let gameGrid = doc.querySelectorAll(".cell");
+        gameGrid.forEach(gameCell => gameCell.innerText = "");
     }
 
     let _isBoardfilled = function(i,j) {
@@ -24,25 +43,24 @@ let game = (function() {
         }
     }
 
-    let _nextTurn = function(player) {
-        //dom port needed -> for i/o; a
-        if(player.ident == 1) {
-            //player 2 turn
+    let _nextTurn = function() {
+        if(currPlayer.ident == 1) {
+            currPlayer = player2();
         } else {
-            //player 1 turn
+            currPlayer = player1();
         }
     }
 
-    let _isWin = function(player) {
-        let winBool = true;
+    let _isWin = function() {
+     
 
         // horiz win
         for(i = 0 ; i < boardLen; i++) {
             let winBool = false;
-            if(board[i][0] == player.symbol) {
+            if(board[i][0] == currPlayer.symbol) {
                 winBool = true;
                 for(j = 0 ; j < boardLen ; j++) {
-                    winBool = winBool && board[i][j] == player.symbol;
+                    winBool = winBool && board[i][j] == currPlayer.symbol;
                 }
             }
             if(winBool) {
@@ -53,10 +71,10 @@ let game = (function() {
         //vert win
         for(j = 0 ; j < boardLen; j++) {
             let winBool = false;
-            if(board[0][j] == player.symbol) {
+            if(board[0][j] == currPlayer.symbol) {
                 winBool = true;
                 for(i= 0 ; i < boardLen ; i++) {
-                    winBool = winBool && board[i][j] == player.symbol;
+                    winBool = winBool && board[i][j] == currPlayer.symbol;
                 }
             }
             if(winBool) {
@@ -65,8 +83,13 @@ let game = (function() {
         }
 
         // diagonalwin
-
-        if(board[0][0] == board[1][1] == board[2][2] == player.symbol || board[0][2] == board[1][1] == board[2][0] == player.symbol ) {
+        console.log(currPlayer.symbol);
+        console.log(board[0][0]);
+        console.log(board[1][1]);
+        console.log(board[2][2]);
+        console.log(board[0][0] == board[1][1]);
+        if(((board[0][0] == board[1][1]) &&(board[0][0] == board[2][2]) && (board[0][0] == currPlayer.symbol)) ||
+        (board[2][0] == board[1][1]) &&(board[0][2] == board[1][1]) && (board[1][1] == currPlayer.symbol)) {
             return true;
         }
         
@@ -90,7 +113,27 @@ let player2 = (function(){
 });
 
 let computer = (function() {
+    // for each computer round, make a minimax tree, given the current board.
+    // take the move that gives max number
 
+    // next time;
 })
 
-console.log(game().fillboard(player1(), 1,1));
+let currPlayer = player1();
+let currSession = game(document);
+let cell = document.querySelectorAll(".cell");
+cell.forEach( divCell => {
+    divCell.addEventListener("click", (event) => {
+    console.log("clicked");
+    let elemSelect = event.target;
+    // let x = elemSelect.dataset.x;
+    // let y = elemSelect.dataset.y;
+    console.log("clicked");
+
+    currSession.fillboard(elemSelect);
+
+    });
+
+});
+
+// console.log(game().fillboard(1,1));
