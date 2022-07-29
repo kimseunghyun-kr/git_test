@@ -139,6 +139,7 @@ let computer = (function () {
 
 let currPlayer = player1();
 let currSession = game(document);
+<<<<<<< Updated upstream
 let grid = document.querySelector(".grid");
 grid.addEventListener('click' , e => currSession.fillboard(e.target));
 // let cell = document.querySelectorAll(".cell");
@@ -155,5 +156,21 @@ grid.addEventListener('click' , e => currSession.fillboard(e.target));
 //     });
 
 // });
+=======
+let cell = document.querySelectorAll(".cell");
+cell.forEach(divCell => {
+    divCell.addEventListener("click", (event) => {
+        console.log("clicked");
+        let elemSelect = event.target;
+        // let x = elemSelect.dataset.x;
+        // let y = elemSelect.dataset.y;
+        console.log("clicked");
+
+        currSession.fillboard(elemSelect);
+
+    });
+
+});
+>>>>>>> Stashed changes
 
 // console.log(game().fillboard(1,1));
