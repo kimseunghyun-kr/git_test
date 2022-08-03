@@ -1,13 +1,10 @@
 import _ from 'lodash';
+import pageLoad from './pageGrid'
 
 console.log("kokodayo");
 
-// function component() {
-//   const element = document.createElement('div');
 
-//   // use your function!
-//   element.textContent = myName('Cody');
-//   return element;
-// }
+pageLoad(document);
 
-// document.body.appendChild(component());
+// refer here for inspiration
+// https://eckben.github.io/bearysBreakfastBar/
