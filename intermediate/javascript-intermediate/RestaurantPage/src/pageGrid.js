@@ -1,31 +1,35 @@
 
-function pageLoad() { //accept documentument as argument
-    let mainBody = document.querySelector("#content");
+function pageLoad(doc) { //accept document as argument
+    console.log(3);
+    let mainBody = doc.querySelector("#content");
 
-
-    let header = document.createElement("div");
+    let header = doc.createElement("div");
     header.setAttribute("id", "header");
-    let description = document.createElement("ul");
+    let description = doc.createElement("ul");
 
-    let menu = document.createElement("li");
-    let location = document.createElement("li");
+    let menu = doc.createElement("li");
+    let location = doc.createElement("li");
     location.textContent = "location"
-    let events = document.createElement("li");
-    let aboutUS = document.createElement("li");
+    let events = doc.createElement("li");
+    let aboutUS = doc.createElement("li");
 
+    description.appendChild(menu);
     description.appendChild(location);
     description.appendChild(events);
     description.appendChild(aboutUS);
+    header.appendChild(description);
+
+    console.log(header);
+
+    let LSBar = doc.createElement("div");
+    LSBar.setAttribute("id", "sidebar");
 
 
-    let LSBar = document.createElement("div");
-    header.setAttribute("id", "sidebar");
+    let contentBox = doc.createElement("div");
+    contentBox.setAttribute("id", "contentBox");
 
 
-    let contentBox = document.createElement("div");
-    header.setAttribute("id", "contentBox");
-
-
+    
     mainBody.appendChild(header);
     mainBody.appendChild(LSBar);
     mainBody.appendChild(contentBox);
